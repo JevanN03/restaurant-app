@@ -1,0 +1,139 @@
+/* Mengatur tampilan keseluruhan halaman favorit */
+#favorite-section {
+  padding: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #feebeb;
+}
+
+#favorite-section h1 {
+  text-align: center;
+  color: #5d5454;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+#favoriteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+#favoriteContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+#favoriteContainer li {
+  background-color: #c9c8c8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(4, 4, 4, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#favoriteContainer li h3 {
+  font-size: 1.3rem;
+  color: #1e1e1e;
+  margin: 10px 0;
+}
+
+#favoriteContainer li img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+#favoriteContainer li p {
+  font-size: 1rem;
+  color: #5d5454;
+  margin: 5px 0;
+}
+
+#favoriteContainer li a {
+  font-size: 1.1rem;
+  color: #1db8b0;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+#favoriteContainer li a:hover {
+  text-decoration: underline;
+}
+
+
+.remove-favorite {
+  background-color: #ff1818;
+  color: white;
+  border: none;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.remove-favorite:hover {
+  background-color: #d54e4e;
+}
+
+
+a#details {
+  display: inline-block;
+  padding: 4px 20px;
+  font-size: 1.3rem;
+  line-height: 2.4;
+  text-decoration: none !important;
+  color: white;
+  background-color: transparent;
+  border: 2px solid #1db88a;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+a#details:hover {
+  background-color: #1db8a1;
+  border-color: #21158a;
+  color: white;
+  transform: scale(1.07);
+  text-decoration: none;
+}
+
+a#details:active {
+  background-color: #1db8a1;
+  border-color: #21158a;
+  text-decoration: none;
+  transform: scale(1.07);
+}
+
+@media (max-width: 600px) {
+  #favoriteContainer {
+    gap: 17px;
+  }
+
+  #favoriteContainer li {
+    padding: 15px;
+  }
+
+  #favoriteContainer li h3 {
+    font-size: 1.1rem;
+  }
+
+  #favoriteContainer li p {
+    font-size: 0.9rem;
+  }
+
+  .remove-favorite {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

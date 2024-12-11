@@ -1,0 +1,32 @@
+import UrlParser from './url-parser.js';
+import Home from '../views/pages/home.js';
+import Detail from '../views/pages/detail.js';
+import Favorite from '../views/pages/favorite.js';
+
+const routes = {
+  '/': Home,
+  '/detail/:id': Detail,
+  '/favorite': Favorite,
+};
+
+const router = async () => {
+  const url = UrlParser.parseActiveUrlWithCombiner();
+  const page = routes[url] || Home;
+
+  const mainContent = document.getElementById('mainContent');
+  mainContent.innerHTML = await page.render();
+  if (page.afterRender) await page.afterRender();
+  const skipToContent = document.querySelector('.skip-link');
+  skipToContent.addEventListener('click', (e) => {
+    e.preventDefault();
+    mainContent.scrollIntoView({
+      behavior: 'smooth',
+    });
+    skipToContent.blur();
+  });
+};
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);
+
+export default router;
